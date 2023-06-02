@@ -1,0 +1,22 @@
+// ==UserScript==
+// @name         New Userscript
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       You
+// @match        https://portalpagos.claro.com.co/index.php?view=vistas/personal/claro/newclaro/confirmacion.php&id_objeto=10002
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=claro.com.co
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // Función para separar el número en grupos de tres cifras
+    function separarNumeroConEspacios(numero) {
+        var numeroFormateado = numero.toString().replace(/\B(?=(\d{2})+(?!\d))/g, " ");
+        return numeroFormateado;
+    }
+
+    // Obtener el elemento con el atributo "name" igual a "CODIGO_CLIENTE"
+    var codigoClienteElement = document.querySelector('input[name="CODIGO_CLIENTE"]');
